@@ -12,6 +12,7 @@
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
 #import "FifthViewController.h"
+#import "SixthViewController.h"
 
 @implementation CustomTabBarAppDelegate
 
@@ -30,10 +31,11 @@
     ThirdViewController *thirdView = [[ThirdViewController alloc] initWithNibName:@"ThirdViewController" bundle:nil];
     FourthViewController *fourthView = [[FourthViewController alloc] initWithNibName:@"FourthViewController" bundle:nil];
     FifthViewController *fifthView = [[FifthViewController alloc] initWithNibName:@"FifthViewController" bundle:nil];
-    
+    SixthViewController *sixthView = [[SixthViewController alloc] initWithNibName:@"SixthViewController" bundle:nil];
     
     
     tabBarController.viewControllers = [NSArray arrayWithObjects:firstView,secondView,thirdView,fourthView,fifthView,nil];
+    tabBarController.allViewControllers = [NSMutableArray arrayWithObjects:firstView,secondView,thirdView,fourthView,fifthView,sixthView,nil];
     
     tabBarController.tabBarImagesArray = [NSMutableArray arrayWithObjects:
                                           [UIImage imageNamed:@"m1.png"],

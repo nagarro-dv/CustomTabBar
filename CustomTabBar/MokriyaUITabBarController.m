@@ -13,6 +13,7 @@
 @synthesize tabBarSelectedStateImagesArray;
 @synthesize tabBarImagesArray;
 @synthesize tabBarTitlesArray;
+@synthesize allViewControllers;
 
 - (void)customizeTabBar
 {
@@ -154,6 +155,24 @@
     [self customizeTabBarLabels];
     [self didselectTabAtIndex:currentlySelectedTabIndex];
     
+}
+
+- (void)updateTabBarItemImageAndTitleAndReplaceViewControllerAtIndex:(NSUInteger)tabIndex 
+                                                           withImage:(UIImage *)tabBarImage 
+                                               andSelectedStateImage:(UIImage *)tabBarSelectedImage
+                                                           withTitle:(NSString *)title
+                                             withViewControllerIndex:(NSUInteger)viewControllerIndex
+
+{
+    NSMutableArray *currentViewControllers = [NSMutableArray arrayWithArray:self.viewControllers];
+    [currentViewControllers replaceObjectAtIndex:tabIndex withObject:[allViewControllers objectAtIndex:viewControllerIndex]];
+    self.viewControllers = currentViewControllers;
+    
+    [self updateTabBarItemImageAndTitleAtIndex:tabIndex 
+                                     withImage:tabBarImage 
+                         andSelectedStateImage:tabBarSelectedImage 
+                                     withTitle:title];
+
 }
 
 - (void)dealloc

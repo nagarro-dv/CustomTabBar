@@ -1,16 +1,16 @@
 //
-//  FifthViewController.m
+//  SixthViewController.m
 //  CustomTabBar
 //
-//  Created by Mohith K M on 9/29/11.
+//  Created by Mohith K M on 10/6/11.
 //  Copyright 2011 Mokriya (www.mokriya.com). All rights reserved.
 //
 
-#import "FifthViewController.h"
-#import "MokriyaUITabBarController.h"
-#import "CustomTabBarAppDelegate.h"
+#import "SixthViewController.h"
 
-@implementation FifthViewController
+
+@implementation SixthViewController
+
 @synthesize webView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,10 +48,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSURL *url = [NSURL URLWithString:@"http://www.mokriya.com/contactus.php"];
+    NSURL *url = [NSURL URLWithString:@"http://www.mokriya.com/blog"];
     //http://www.mokriya.com/aboutus.html
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    NSLog(@"WebView: %@", self.webView);
     [self.webView loadRequest:requestObj];
 }
 
@@ -64,6 +63,7 @@
 } 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
+    NSLog(@"%@",[error localizedDescription]);
 	NSString *msg=@"Please try again after some time";
 	UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Request failed" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
 	[alert show];	
@@ -72,26 +72,10 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
 	if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-        return YES;
+        return NO;
 	}
 	return YES;
 }
 
-- (IBAction)changeTabBarImage:(id)sender
-{
-     CustomTabBarAppDelegate *appDelegate = (CustomTabBarAppDelegate *)[[UIApplication sharedApplication] delegate];
-
-    [appDelegate.tabBarController updateTabBarItemImageAndTitleAtIndex:0
-                                                             withImage:[UIImage imageNamed:@"m6.png"]
-                                                 andSelectedStateImage:[UIImage imageNamed:@"am6.png"]
-                                                             withTitle:@"Blog"];
-    
-    [appDelegate.tabBarController updateTabBarItemImageAndTitleAndReplaceViewControllerAtIndex:0
-                                                                                     withImage:[UIImage imageNamed:@"m6.png"]
-                                                                         andSelectedStateImage:[UIImage imageNamed:@"am6.png"]
-                                                                                     withTitle:@"Blog"
-                                                                       withViewControllerIndex:5];
-    
-}
 
 @end

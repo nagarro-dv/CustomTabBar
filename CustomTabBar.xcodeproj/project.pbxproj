@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080C2718143E246700E94131 /* SixthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 080C2716143E246700E94131 /* SixthViewController.m */; };
+		080C2719143E246700E94131 /* SixthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 080C2717143E246700E94131 /* SixthViewController.xib */; };
 		080E9B251435F9FA00C4F2DE /* am1.png in Resources */ = {isa = PBXBuildFile; fileRef = 080E9B1F1435F9FA00C4F2DE /* am1.png */; };
 		080E9B261435F9FA00C4F2DE /* am2.png in Resources */ = {isa = PBXBuildFile; fileRef = 080E9B201435F9FA00C4F2DE /* am2.png */; };
 		080E9B271435F9FA00C4F2DE /* am3.png in Resources */ = {isa = PBXBuildFile; fileRef = 080E9B211435F9FA00C4F2DE /* am3.png */; };
@@ -58,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		080C2715143E246700E94131 /* SixthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixthViewController.h; sourceTree = "<group>"; };
+		080C2716143E246700E94131 /* SixthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixthViewController.m; sourceTree = "<group>"; };
+		080C2717143E246700E94131 /* SixthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SixthViewController.xib; sourceTree = "<group>"; };
 		080E9B1F1435F9FA00C4F2DE /* am1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = am1.png; path = Images/am1.png; sourceTree = SOURCE_ROOT; };
 		080E9B201435F9FA00C4F2DE /* am2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = am2.png; path = Images/am2.png; sourceTree = SOURCE_ROOT; };
 		080E9B211435F9FA00C4F2DE /* am3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = am3.png; path = Images/am3.png; sourceTree = SOURCE_ROOT; };
@@ -208,6 +213,9 @@
 				08B00B791433BCF3004617B0 /* FifthViewController.h */,
 				08B00B7A1433BCF3004617B0 /* FifthViewController.m */,
 				08B00B7B1433BCF3004617B0 /* FifthViewController.xib */,
+				080C2715143E246700E94131 /* SixthViewController.h */,
+				080C2716143E246700E94131 /* SixthViewController.m */,
+				080C2717143E246700E94131 /* SixthViewController.xib */,
 				089A216C1435398A00594F34 /* MokriyaUITabBarController.h */,
 				089A216D1435398A00594F34 /* MokriyaUITabBarController.m */,
 			);
@@ -336,6 +344,7 @@
 				080E9B281435F9FA00C4F2DE /* am4.png in Resources */,
 				080E9B291435F9FA00C4F2DE /* am5.png in Resources */,
 				080E9B2A1435F9FA00C4F2DE /* am6.png in Resources */,
+				080C2719143E246700E94131 /* SixthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +389,7 @@
 				08B00B6A1433A4CB004617B0 /* FourthViewController.m in Sources */,
 				08B00B7C1433BCF3004617B0 /* FifthViewController.m in Sources */,
 				089A216E1435398A00594F34 /* MokriyaUITabBarController.m in Sources */,
+				080C2718143E246700E94131 /* SixthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

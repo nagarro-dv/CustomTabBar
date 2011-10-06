@@ -13,11 +13,16 @@
     @private
     NSMutableArray *tabBarButtonsArray;
     NSMutableArray *tabBarLabelsArray;
+    
+    NSMutableArray *allViewControllers; 
+    //Array of all controllers [Case where you need to switch b'wn multiple view controllers]
 }
 
 @property (nonatomic, retain) NSMutableArray *tabBarImagesArray;
 @property (nonatomic, retain) NSMutableArray *tabBarSelectedStateImagesArray;
 @property (nonatomic, retain) NSMutableArray *tabBarTitlesArray;
+@property (nonatomic, retain) NSMutableArray *allViewControllers;
+
 - (void)customizeTabBar;
 - (void)customizeTabBarImages;
 - (void)customizeTabBarLabels;
@@ -27,4 +32,9 @@
                                    withImage:(UIImage *)tabBarImage 
                        andSelectedStateImage:(UIImage *)tabBarSelectedImage
                                    withTitle:(NSString *)title;
+- (void)updateTabBarItemImageAndTitleAndReplaceViewControllerAtIndex:(NSUInteger)tabIndex 
+                                                           withImage:(UIImage *)tabBarImage 
+                                               andSelectedStateImage:(UIImage *)tabBarSelectedImage
+                                                           withTitle:(NSString *)title
+                                             withViewControllerIndex:(NSUInteger)viewControllerIndex;
 @end
