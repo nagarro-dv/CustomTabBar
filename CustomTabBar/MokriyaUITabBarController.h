@@ -22,4 +22,9 @@
 - (void)customizeTabBarImages;
 - (void)customizeTabBarLabels;
 - (void)didSelectTab:(id)sender;
+- (void)didselectTabAtIndex:(NSUInteger)selectedTabIndex;
+- (void)updateTabBarItemImageAndTitleAtIndex:(NSUInteger)tabIndex 
+                                   withImage:(UIImage *)tabBarImage 
+                       andSelectedStateImage:(UIImage *)tabBarSelectedImage
+                                   withTitle:(NSString *)title;
 @end

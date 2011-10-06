@@ -13,4 +13,6 @@
     
 }
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
+
+- (IBAction)changeTabBarImage:(id)sender;
 @end

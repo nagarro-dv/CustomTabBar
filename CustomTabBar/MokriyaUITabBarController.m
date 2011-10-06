@@ -108,12 +108,16 @@
 {
     UIButton *selectedButton = (UIButton *)sender;
     self.selectedIndex = selectedButton.tag;
-    
+    [self didselectTabAtIndex:selectedButton.tag];
+}
+
+- (void)didselectTabAtIndex:(NSUInteger)selectedTabIndex
+{
+    self.selectedIndex = selectedTabIndex;
     for (int i=0; i<[tabBarButtonsArray count]; i++) {
-        if (selectedButton.tag==i) {
+        if (selectedTabIndex==i) {
             UILabel *tabBarLabel = [tabBarLabelsArray objectAtIndex:i];
             tabBarLabel.textColor = [UIColor whiteColor];
-            
             continue;
         }
         UIImage *buttonImage = [tabBarImagesArray objectAtIndex:i];
@@ -125,14 +129,31 @@
         
         UILabel *tabBarLabel = [tabBarLabelsArray objectAtIndex:i];
         tabBarLabel.textColor = [UIColor blackColor];
-    
+        
     }
     
-    UIImage *buttonImage = [tabBarSelectedStateImagesArray objectAtIndex:selectedButton.tag];
+    UIButton *selectedButton = [tabBarButtonsArray objectAtIndex:selectedTabIndex];
+    UIImage *buttonImage = [tabBarSelectedStateImagesArray objectAtIndex:selectedTabIndex];
     [selectedButton setImage:buttonImage forState:UIControlStateNormal];
     [selectedButton setImage:buttonImage forState:UIControlStateSelected];
     [selectedButton setImage:buttonImage forState:UIControlStateHighlighted];
     [selectedButton setImage:buttonImage forState:UIControlStateSelected|UIControlStateHighlighted];
+}
+
+- (void)updateTabBarItemImageAndTitleAtIndex:(NSUInteger)tabIndex 
+                                   withImage:(UIImage *)tabBarImage 
+                       andSelectedStateImage:(UIImage *)tabBarSelectedImage
+                                   withTitle:(NSString *)title
+{
+    NSUInteger currentlySelectedTabIndex = self.selectedIndex;
+    [tabBarImagesArray replaceObjectAtIndex:tabIndex withObject:tabBarImage];
+    [tabBarSelectedStateImagesArray replaceObjectAtIndex:tabIndex withObject:tabBarSelectedImage];
+    [tabBarTitlesArray replaceObjectAtIndex:tabIndex withObject:title];
+    
+    [self customizeTabBarImages];
+    [self customizeTabBarLabels];
+    [self didselectTabAtIndex:currentlySelectedTabIndex];
+    
 }
 
 - (void)dealloc

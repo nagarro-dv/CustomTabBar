@@ -7,7 +7,8 @@
 //
 
 #import "FifthViewController.h"
-
+#import "MokriyaUITabBarController.h"
+#import "CustomTabBarAppDelegate.h"
 
 @implementation FifthViewController
 @synthesize webView;
@@ -74,6 +75,18 @@
         return YES;
 	}
 	return YES;
+}
+
+- (IBAction)changeTabBarImage:(id)sender
+{
+     CustomTabBarAppDelegate *appDelegate = (CustomTabBarAppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    [appDelegate.tabBarController updateTabBarItemImageAndTitleAtIndex:0
+                                                             withImage:[UIImage imageNamed:@"m6.png"]
+                                                 andSelectedStateImage:[UIImage imageNamed:@"am6.png"]
+                                                             withTitle:@"Blog"];
+    
+    
 }
 
 @end
